@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Podkova&family=Poppins:ital,wght@1,100&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: fixed;
+    z-index: 1;
+}
+
+nav {
+    display: flex;;
+    justify-content: space-between;
+    margin-right: 50px;
+    background:#E7DCCA;
+    position: fixed;
+    width: 100%;
+    height: 11%;
+    top: 0px;
+}
+
+.logo{
+    width: 250px;
+    height: 55px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+nav ul{
+    margin-right: 3.5rem;
+    list-style-type: none;
+    font-family: 'Podkova', serif;
+    -webkit-tap-highlight-color: transparent;
+}
+nav ul li{
+    display: inline-block;
+    padding: 20px 35px;
+    font-size: 18px;
+    cursor: pointer;
+    letter-spacing: .2rem;
+  
+}
+nav ul li a{
+    text-decoration:none;
+    color: black;
+    position:relative;
+    transition: color 0.4s ease-in-out;
+    
+}
+nav ul li a:hover{
+    color:black;
+    text-decoration: none;
+}
+
+nav ul a li {
+    text-decoration:none;
+    color: black;
+}
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+
+  }
+  nav ul li a:hover::before{
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+.htoContent p{
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-family: 'calibri', sans-serif;
+    line-height: 1.5;
+ }
+ .htoContent p.title{
+     font-size: 35px;
+     font-family: 'calibri', sans-serif;
+     font-weight: bold;
+     display: flex;
+     justify-content: center;
+ }
+
+.htoHeader{
+    text-align: center;
+}
+
+.h1HTO{
+     font-size: 40px;
+     margin-top: 8%;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     
+}
+.htologo{
+    margin-top: 4%;
+     width: 540px;  
+     
+}
+
+.h1Logo{
+     text-align: center;
+     margin: 0px auto;
+     margin-top: 50px;
+     border-style: solid;
+     font-size: 40px;
+     padding: 10px;
+     position: relative;
+     max-width: 20%;
+
+}
+.guideContent{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    margin: 0px auto auto 8%;
+    margin-top: 4%;
+    max-width: 80%;
+}
+.guide{
+    position:relative;
+    text-align: center;
+}
+.gHeader{
+    font-size: 30px;
+    font-family: 'calibri', sans-serif;
+
+}
+.guideContent p{
+    font-size: 12px;
+    font-family: 'calibri', sans-serif;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+    text-align: center;
+
+}
+
+.info{
+    position: relative;
+    text-align: center;
+}
+.infoHeader{
+    font-size: 30px;
+    font-family:'calibri',sans-serif;
+}
+.remind{
+    position: relative;
+    text-align: center;
+}
+.reminder{
+    font-size: 30px;
+    font-family:'calibri',sans-serif;
+}
+
+img{
+    pointer-events: none;
+}
+
+#toggler, #navbar label{
+    display: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    nav{
+        flex-direction: column;
+        margin-top: 0;
+        padding: 0;
+        width: 100%;
+     
+    }
+    
+    nav ul{
+        display: none;
+        background-color: #E7DCCA;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+    #navbar img {
+        width: 9rem;
+        height: 3rem;
+        z-index: -2;
+    }
+    
+    #navbar ul li{
+        text-align: center;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-height: 0;
+        max-width: 370px;
+        background-color: none;
+        margin-left: -18px;
+        padding: 18px 35px;
+    }
+    #navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        margin-top: 4%;
+        color: #fff;
+        -webkit-tap-highlight-color: transparent;
+    }
+    nav ul.show{
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-header label{
+        margin-right: 10%;
+    }
+    .htoHeader{
+        position: relative;
+        width: 100%;
+        margin-top: 130px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .htoHeader .h1HTO{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+    .htoHeader img{
+        width: 95%;
+        margin: 15% 7% 0 5%;   
+        max-width: 600px;
+    }
+    .htoContent{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .htoContent p{
+        text-align: center;
+      
+    }
+    .h1Logo{
+        font-size: 18px;
+        max-width: 200px;
+        width: 100%;
+        
+    }
+    .guideContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+        
+    }
+    nav ul.show{
+    display: block;
+    }
+    .nav-header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-header label{
+        margin-right: 10%;
+    }
+
+}

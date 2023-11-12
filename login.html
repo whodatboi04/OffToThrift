@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Off To Thrift</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://kit.fontawesome.com/48424c1745.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="img/FrontDesign.png" type="image/png"> 
+    
+
+</head>
+<body>
+    <header>
+        <!-- Navigation bar -->
+        <nav id="navbar" data-aos="fade-down" data-aos-duration="900">
+            <div class="nav-header">
+                <img class="logo" src="img/Logo.png" alt="logo">
+                <input type="button" id="toggler">
+                <label for="toggler" class="fas fa-bars toggler"></label>
+            </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ShopPage.html">Shop</a></li>
+                    <li><a href="HTOPage.html">How To Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <a href="login.html" class="nav-icon"><li class="fas fa-user"></li></a>
+                    <a href="message.html" class="nav-icon"> <li class="fas fa-message" ></li></a>
+               </ul> 
+        </nav>
+        <!-- Navigation bar End -->
+    </header>
+   
+    <div class="row">
+        <h1>Login</h1>
+        <form method="POST">
+            <div class="field-holder">
+                <label>Email</label>
+                <input type="email" name="email" id="email" placeholder="Email Adress" required> 
+            </div>
+            <div class="field-holder">
+                <label>Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required> 
+            </div>
+            <div class="btn-login">
+                <button><a href="HomePage.html" type="submit" name="submit">Login</a></button>
+            </div>
+            <a class="btn-footer" href="register.html">Create Account !</a>
+        </form>
+    </div>
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    const toggler = document.getElementById('toggler');
+    const navbar = document.querySelector('nav ul');
+        
+        toggler.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+</script>
+
+</body>
+</html>

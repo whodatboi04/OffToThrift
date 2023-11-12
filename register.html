@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/48424c1745.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="icon" href="img/FrontDesign.png" type="image/png"> 
+    <title>Register - Off To Thrift</title>
+</head>
+<body>
+     <header>
+        <!-- Navigation bar -->
+        <nav id="navbar" data-aos="fade-down" data-aos-duration="900">
+            <div class="nav-header">
+                <img class="logo" src="img/Logo.png" alt="logo">
+                <input type="button" id="toggler">
+                <label for="toggler" class="fas fa-bars toggler"></label>
+            </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ShopPage.html">Shop</a></li>
+                    <li><a href="HTOPage.html">How To Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <a href="login.html" class="nav-icon"><li class="fas fa-user"></li></a>
+                    <a href="message.html" class="nav-icon"> <li class="fas fa-message" ></li></a>
+               </ul> 
+        </nav>
+        <!-- Navigation bar End -->
+    </header>
+    <div class="row">
+        <h1>Register</h1>
+        <form method = "POST">
+            <div class="user-info">
+                <div class="field-holder">
+                    <label>First Name</label>
+                    <input type="text" name="fname" placeholder="First Name" required> 
+                </div>
+                <div class="field-holder">
+                    <label>Last Name</label>
+                    <input type="text" name="lname"  placeholder="Last Name" required> 
+                </div>
+            </div>
+            <div class="account-info">
+                <div class="field-holder">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Email Adress" required> 
+                </div>
+                <div class="field-holder">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Password" required> 
+                </div>
+            </div>
+            <div class="confirm-info">
+                <div class="field-holder">
+                    <label>Confirm Password</label>
+                    <input type="password" name="repassword" placeholder="Confirm Password" required> 
+                </div>
+            </div>
+            <div class="btn-register">
+                <button type="submit" name="submit">Register</button>
+            </div>
+            <a class="btn-footer" href="login.html">Already have an account !</a>
+        </form>
+    </div>
+
+
+<script>
+    const toggler = document.getElementById('toggler');
+        const navbar = document.querySelector('nav ul');
+        
+        toggler.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+
+</script>
+
+
+
+</body>
+</html>

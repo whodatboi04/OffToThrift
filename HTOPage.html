@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/HTOPage.css">
+    <script src="https://kit.fontawesome.com/48424c1745.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="img/FrontDesign.png" type="image/png"> 
+    <title>How To Order - Off To Thrift</title>
+</head>
+
+<body>
+    <header>
+        <!-- Navigation bar -->
+        
+        <nav id="navbar" data-aos="fade-down" data-aos-duration="900">
+            <div class="nav-header">
+                <img class="logo" src="img/Logo.png" alt="logo">
+                <input type="button" id="toggler">
+                <label for="toggler" class="fa fa-bars toggler"></label>
+            </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ShopPage.html">Shop</a></li>
+                    <li><a href="HTOPage.html">How To Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <a href="login.html" class="nav-icon"><li class="fas fa-user"></li></a>
+                    <a href="message.html" class="nav-icon"> <li class="fas fa-message" ></li></a>
+               </ul> 
+        </nav>
+    
+        <!-- Navigation bar End -->
+       
+    </header>
+    <style>
+       
+    </style>
+
+    <div class="htoHeader">
+        <h1 class="h1HTO">How to Order</h1>
+        <img class="htologo" src="img/htologo.png">
+    </div>
+
+    <div class="htoContent">
+        
+        <p class="title">Instructions</p>
+        <p>- Go to SHOP section to browse all the products available at our online shop<br>
+            - Click Mine/Steal/Grab of the product that you wish to buy.<br>
+            - For the payment you can choose Shipment or Meetup.<br>
+            - You will receive updates regarding your order through SMS.</p>
+    </div>
+    <h1 class="h1Logo">OFF TO THRIFT</h1>
+    <div class="guideContent">
+        <div class="guide">
+            <h2 class="gHeader">GUIDELINES</h2>
+            <p>Please be patient if you order<br>
+            Wait for out response<br>
+            Bogus buyer and join miner will be posted<br>
+            Avoid deleting your comments on the posted items<br>
+            Mine/Steal/Grab Basis<br></p>
+        </div>
+        <div class="info">
+            <h2 class="infoHeader"> FOR YOUR INFORMATION</h2>
+            <p>Colors may differ from the actual photo due to lightning<br>
+            Items are thrifted. All were washed amd ironed for proper hygienic purposes.<br>
+            Also, ready to wear.<br>
+            Please read the caption if there are flaws or damages indicated. <br>
+            We won't accept<br>
+            Returns/Exchanges/Refunds items
+            </p>
+        </div>
+        <div class="remind">
+            <h2 class="reminder">REMINDER</h2>
+            <p>Always manage your expectations!<br>
+               Please remember that these items<br>
+               Are thrifted and not brand new.<br>
+            </p>
+            <p>THANK YOU!</p>
+        </div>
+    </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    const toggler = document.getElementById('toggler');
+        const navbar = document.querySelector('nav ul');
+        
+        toggler.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message - Off To Thrift</title>
+    <link rel="stylesheet" type="text/css" href="css/message.css">
+    <script src="https://kit.fontawesome.com/48424c1745.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="img/FrontDesign.png" type="image/png"> 
+</head>
+<body>
+    <header>
+        <!-- Navigation bar -->
+        <nav id="navbar" data-aos="fade-down" data-aos-duration="900">
+            <div class="nav-header">
+                <img class="logo" src="img/Logo.png" alt="logo">
+                <input type="button" id="toggler">
+                <label for="toggler" class="fa fa-bars toggler"></label>
+            </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ShopPage.html">Shop</a></li>
+                    <li><a href="HTOPage.html">How To Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <a href="login.html" class="nav-icon"><li class="fas fa-user"></li></a>
+                    <a href="message.html" class="nav-icon"> <li class="fas fa-message" ></li></a>
+               </ul> 
+        </nav>
+        <!-- Navigation bar End -->
+        </header>   
+        <style>
+           @media screen and (max-width: 600px) {
+            .container h2{
+                margin-top: 15%;
+                font-size: 27px;
+            }
+        }
+        </style>
+   
+    <body>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name"  required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"  required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-number">Contact Number:</label>
+                    <input type="text" id="contact-number" name="contact-number"  maxlength="11" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"  required></textarea>
+                </div>
+                <button type="button" onclick="sendEmail()" class="btn-submit">Submit</button>
+            </form>
+        </div>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    //Send Email API
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let contactNumber = document.getElementById("contact-number");
+    let message = document.getElementById("message");
+
+
+    function sendEmail(){
+        Email.send({
+        SecureToken :"8c28747f-6e9b-422d-b1dd-c0a9c69fb2f1",
+        To : "thriftoffto@gmail.com",
+        From : email.value,
+        Subject : "Message from Contact Us",
+        Body : 'Name: ' + name.value + '<br> Email: ' + email.value + '<br> Contact Number: ' + contactNumber.value + '<br> Message: ' + message.value
+    }).then(
+    message => alert(message)
+    );
+    }
+
+    //Toggle Menu
+    const toggler = document.getElementById('toggler');
+        const navbar = document.querySelector('nav ul');
+        
+        toggler.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+            navbar.style.background = '#E7DCCA';
+        });
+  </script>
+
+</body>
+</html>

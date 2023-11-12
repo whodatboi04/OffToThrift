@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection - Off To Thrift</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ShopPage.css">
+    <script src="https://kit.fontawesome.com/48424c1745.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="img/FrontDesign.png" type="image/png"> 
+    <link href="toastr.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    
+   
+</head>
+<body>
+    <header>
+        <!-- Navigation bar -->
+            <nav id="navbar" data-aos="fade-down" data-aos-duration="900">
+                <div class="nav-header">
+                    <img class="logo" src="img/Logo.png" alt="logo">
+                    <input type="button" id="toggler">
+                    <label for="toggler" class="fa fa-bars toggler"></label>
+                </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ShopPage.html">Shop</a></li>
+                        <li><a href="HTOPage.html">How To Order</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <a href="login.html" class="nav-icon"><li class="fas fa-user"></li></a>
+                        <a href="message.html" class="nav-icon"> <li class="fas fa-message" ></li></a>
+                        <div class="totalQty">0</div>
+                        <a href="#" class="nav-icon"><li class="fas fa-bag-shopping"></li></a>
+                   </ul> 
+            </nav>
+        
+        <!-- Navigation bar End -->
+    </header>
+    <style>
+    
+        
+    </style>
+    <div class="cart">
+        <h2>CART<span><a><i class="fas fa-times"></i></span></a></h2>
+        <div class="listCart">
+            <div class="itemCart">
+                <img src="img/green-trousers.png" alt="">
+                <div class="detailsCart">
+                    <div class="itemName">
+                        HW Green Trousers
+                    </div>
+                    <div class="price">
+                        400
+                    </div>
+                    <div class="qty">
+                        <button>-</button>
+                        <span class="value">1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cartBtn">
+            <div class="closeBtn">
+                <a>Close</a>
+            </div>
+            <div class="checkOut">
+                <a>Check Out</a>
+            </div>
+        </div>
+    </div> 
+    
+    <main>
+       
+        <div class="search-container">
+            <div class="search"> 
+                <input type="text" placeholder="Search" id="find" onkeyup="search()">
+                <button type="submit"><i class="fas fa-search" style="color: #e7dcca;"></i></button>
+            </div>
+        </div>
+        <style>
+            
+        </style>
+
+        <div class="grid-collection" id="shop">
+            <h1>ALL PRODUCTS</h1>
+            <div class="item-container">
+            <a data-toggle="modal" data-target="#grid-modal">
+                <div class="grid-items" id="grid-item">
+
+                    <img src="img/green-trousers.png" class="grid-img" alt="Green Trousers" data-name="img-1"> 
+                    <h3>HW Green Trousers</h3>
+                    <h3>₱400.00</h3>
+
+                    <div class="details" data-target="img-1">
+                        <p> W: 27-32 (13.5-16) garterized<br>
+                            L:37<br>
+                            Rise:11<br>
+                            Hips:19<br>
+                            Thighs:11.5<br>
+                        </p>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+
+    
+        <!-- Modal -->
+        <div class="modal fade" id="grid-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg"  role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Item Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body d-flex justify-content-around flex-row-reverse">
+                    <div class="item-preview">
+                        <div class="details-img" data-target="img-1">
+                            <h3>HW Green Trousers</h3>
+                            <p>Laid flat measurements</p>
+                                <p> W: 27-32 (13.5-16) garterized<br></p>
+                                <p>L:37</p>
+                                <p>Rise:11</p>
+                                <p>Hips:19</p>
+                                <p>Thighs:11.5</p>
+                                <p>₱400.00</p>
+                        </div>
+                    </div>
+
+                    <img src="img/green-trousers.png" class="modal-img" alt="Green Trousers">
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="addToCart btn btn-success ml-3" id="addToCart">Add To Cart</button>
+                </div>
+            </div>
+            </div>
+        </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script >
+        AOS.init();
+        function search() {
+            let find = document.getElementById('find').value.toUpperCase();
+            let item = document.querySelectorAll('.grid-items');
+            let name = document.getElementsByTagName('h3');
+
+            for(var i = 0; i <= name.length; i++){
+
+                var look = item[i].getElementsByTagName('h3')[0];
+                var value = look.innerHTML || look.innerText || look.textContent;
+                if(value.toUpperCase().indexOf(find) > -1){
+                    item[i].style.display = "";
+                }else{
+                    item[i].style.display = "none";
+                }
+
+            }
+
+        }
+        
+        const toggler = document.getElementById('toggler');
+        const navbar = document.querySelector('nav ul');
+        
+        toggler.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+
+        const cartBtn = document.querySelector('.fa-bag-shopping');
+        const cart = document.querySelector('.cart');
+        const closeBtn = document.querySelector('.closeBtn');
+        const checkOut = document.querySelector('.checkOut');
+        const main = document.querySelector('main');
+        const nav = document.querySelector('nav');
+        const exit = document.querySelector('.fa-times');
+
+        cartBtn.addEventListener('click', () => {
+            cart.classList.add('show');
+            main.style.opacity = '0.5';
+            nav.style.opacity = '0.5';
+            main.style.pointerEvents = 'none';
+            nav.style.pointerEvents = 'none';
+        });
+        closeBtn.addEventListener('click', () => {
+            cart.classList.remove('show');
+            main.style.opacity = '1';
+            nav.style.opacity = '1';
+            main.style.pointerEvents = 'auto';
+            nav.style.pointerEvents = 'auto';
+        });
+        exit.addEventListener('click', () => {
+            cart.classList.remove('show');
+            main.style.opacity = '1';
+            nav.style.opacity = '1';
+            main.style.pointerEvents = 'auto';
+            nav.style.pointerEvents = 'auto';
+        });
+
+
+        let product = null;
+        //Get the products from the JSON file
+        fetch("product.json")
+        .then(res => res.json())
+        .then(data => {
+            products = data;
+            addCartToHTML();
+        });
+        
+
+     function addCartToHTML(){
+         let gridItems = document.querySelector('.item-container');
+         gridItems.innerHTML = '';
+
+         //add new datas
+         if(products != null){
+             products.forEach(product => {
+             let newProduct = document.createElement('div');
+             newProduct.classList.add('grid-items');
+             newProduct.innerHTML = 
+             `<a data-toggle="modal" data-target="#grid-modal" onclick="addModalItem(${product.id})">
+             <img src="${product.image}" class="grid-img" alt="Green Trousers"> 
+                    <h3>${product.name}</h3>
+                    <h3>${product.price}</h3>
+
+                    <div class="details" data-target="img-1">
+                        <p> ${product.size}<br>
+                            ${product.length}<br>
+                            ${product.rise}<br>
+                            ${product.hips}<br>
+                            ${product.thigh}<br>
+                        </p>
+                    </div></a>`;
+                     gridItems.appendChild(newProduct)
+                     newProduct.addEventListener('mouseenter', () => {
+                        newProduct.style.transform = 'scale(1.1)';
+                        newProduct.style.transition = 'all 0.5s ease';
+                    });
+                    newProduct.addEventListener('mouseleave', () => {
+                        newProduct.style.transform = 'scale(1)';
+                        newProduct.style.transition = 'all 0.5s ease';
+                    });
+                     addModalItem(product.id);
+                });
+               
+         }
+
+     }
+     //Add the product to the modal
+     function addModalItem($idProduct){
+         let productCopy = JSON.parse(JSON.stringify(products));
+         let dataProduct = productCopy.filter(
+             product => product.id == $idProduct
+         )[0];
+         document.querySelector(".modal-img").setAttribute('src', dataProduct.image);
+         document.querySelector(".details-img h3").innerText = dataProduct.name;
+         document.querySelector(".details-img p:nth-child(3)").innerText = dataProduct.size;
+         document.querySelector(".details-img p:nth-child(4)").innerText = dataProduct.length;
+         document.querySelector(".details-img p:nth-child(5)").innerText = dataProduct.rise;
+         document.querySelector(".details-img p:nth-child(6)").innerText = dataProduct.hips;
+         document.querySelector(".details-img p:nth-child(7)").innerText = dataProduct.thigh;
+         document.querySelector(".details-img p:nth-child(8)").innerText = dataProduct.price;
+         document.querySelector(".details-img").classList.add("active");
+         document.querySelector(".addToCart").setAttribute('onclick', `addCart(${dataProduct.id})` );
+         
+     }
+
+
+        let listCart = [];
+        //Get cookie data cart
+        function checkCart(){
+            var cookieValue = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('listCart='));
+            if(cookieValue){
+                listCart = JSON.parse(cookieValue.split('=')[1]);
+            }
+
+        }
+        checkCart();
+        // Add the product to the cart
+        function addCart($idProduct){
+            let productCopy = JSON.parse(JSON.stringify(products));        
+            //If the product is not in the cart
+            if(!listCart[$idProduct]){
+                let dataProduct = productCopy.filter(
+                    product => product.id == $idProduct
+                )[0];
+                //add the product in the cart
+                listCart[$idProduct] = dataProduct;
+                listCart[$idProduct].qty = 1;
+            }else{
+                //If the product is already in the cart
+                listCart[$idProduct].qty++;
+            }
+              //Saving Data cart from cookies
+            let timerSave = "expires =Sun, 31 Dec 2025 23:59:59 UTC";
+            document.cookie = "listCart=" + JSON.stringify(listCart) + ";" + timerSave + ";path=/";
+            toastr.options.timeOut = 1000;  
+            toastr.success('Item added to cart');
+           
+
+            addCartToHTLM();
+        }
+        addCartToHTLM();
+
+        function addCartToHTLM(){
+            //clear the cart
+            let listCartHTML = document.querySelector(".listCart");
+            listCartHTML.innerHTML = '';
+
+            let totalHTML = document.querySelector(".totalQty");
+            let totalQty = 0;
+
+            if(listCart){
+                listCart.forEach(product => {
+                    if(product){
+                        let newCart = document.createElement('div');
+                        newCart.classList.add('itemCart');
+                        newCart.innerHTML = 
+                       `<img src="${product.image}" alt="">
+                        <div class="detailsCart">
+                            <div class="itemName">
+                               ${product.name}
+                            </div>
+                            <div class="price">
+                               ${product.price}
+                            </div>
+                            <div class="qty">
+                                <button onclick="changeQty(${product.id}, '-')">-</button>
+                                <span class="value">${product.qty}</span>
+                                <button onclick="changeQty(${product.id}, '+')">+</button>
+                            </div>
+                        </div>`;
+                        listCartHTML.appendChild(newCart);
+                        totalQty += product.qty;
+                    }
+                })
+            }
+            totalHTML.innerHTML = totalQty;
+        }   
+
+        function changeQty($idProduct, $type){
+            if(listCart[$idProduct]){
+                if($type == '-'){
+                    listCart[$idProduct].qty--;
+                    if(listCart[$idProduct].qty <= 0){
+                        delete listCart[$idProduct];
+                    }
+                }else{
+                    listCart[$idProduct].qty++;
+                }
+            }
+            //Saving Data cart from cookies
+            let timerSave = "expires =Sun, 31 Dec 2025 23:59:59 UTC";
+            document.cookie = "listCart=" + JSON.stringify(listCart) + ";" + timerSave + ";path=/";
+            addCartToHTLM();
+        }
+    </script>
+</body>
+</html>
